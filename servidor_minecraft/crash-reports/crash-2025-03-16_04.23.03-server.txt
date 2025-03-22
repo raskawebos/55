@@ -1,0 +1,172 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 2025-03-16 04:23:03
+Description: Exception ticking world
+
+java.lang.RuntimeException: Attempted to load class net/minecraft/client/Minecraft for invalid dist DEDICATED_SERVER
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[fmlloader-1.20.1-47.3.7.jar%2369!/:1.0] {}
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at net.mrwilfis.treasures_of_the_dead.entity.custom.CaptainSkeletonInterface.getRandomName(CaptainSkeletonInterface.java:14) ~[treasures_of_the_dead-0.2.5a-1.20.1.jar%23154!/:0.2.5a-1.20.1] {re:classloading}
+	at net.mrwilfis.treasures_of_the_dead.entity.custom.CaptainSkeletonEntity.m_6518_(CaptainSkeletonEntity.java:50) ~[treasures_of_the_dead-0.2.5a-1.20.1.jar%23154!/:0.2.5a-1.20.1] {re:classloading}
+	at net.minecraftforge.event.ForgeEventFactory.onFinalizeSpawn(ForgeEventFactory.java:285) ~[forge-1.20.1-47.3.7-universal.jar%23162!/:?] {re:classloading}
+	at net.minecraft.world.level.NaturalSpawner.m_47038_(NaturalSpawner.java:176) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,xf:fml:forge:forge_method_redirector,re:classloading,xf:fml:forge:forge_method_redirector,pl:mixin:A}
+	at net.minecraft.world.level.NaturalSpawner.m_47045_(NaturalSpawner.java:118) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,xf:fml:forge:forge_method_redirector,re:classloading,xf:fml:forge:forge_method_redirector,pl:mixin:A}
+	at net.minecraft.world.level.NaturalSpawner.m_47029_(NaturalSpawner.java:108) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,xf:fml:forge:forge_method_redirector,re:classloading,xf:fml:forge:forge_method_redirector,pl:mixin:A}
+	at net.minecraft.server.level.ServerChunkCache.m_8490_(ServerChunkCache.java:358) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache.m_201698_(ServerChunkCache.java:312) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.m_8793_(ServerLevel.java:305) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:citadel.mixins.json:ServerLevelMixin,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:893) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.dedicated.DedicatedServer.m_5703_(DedicatedServer.java:283) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:814) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:661) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Suspected Mod: 
+	Treasures of the dead (treasures_of_the_dead), Version: 0.2.5a-1.20.1
+		at TRANSFORMER/treasures_of_the_dead@0.2.5a-1.20.1/net.mrwilfis.treasures_of_the_dead.entity.custom.CaptainSkeletonInterface.getRandomName(CaptainSkeletonInterface.java:14)
+Stacktrace:
+	at net.minecraftforge.fml.loading.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:57) ~[fmlloader-1.20.1-47.3.7.jar%2369!/:1.0] {}
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at net.mrwilfis.treasures_of_the_dead.entity.custom.CaptainSkeletonInterface.getRandomName(CaptainSkeletonInterface.java:14) ~[treasures_of_the_dead-0.2.5a-1.20.1.jar%23154!/:0.2.5a-1.20.1] {re:classloading}
+	at net.mrwilfis.treasures_of_the_dead.entity.custom.CaptainSkeletonEntity.m_6518_(CaptainSkeletonEntity.java:50) ~[treasures_of_the_dead-0.2.5a-1.20.1.jar%23154!/:0.2.5a-1.20.1] {re:classloading}
+	at net.minecraftforge.event.ForgeEventFactory.onFinalizeSpawn(ForgeEventFactory.java:285) ~[forge-1.20.1-47.3.7-universal.jar%23162!/:?] {re:classloading}
+	at net.minecraft.world.level.NaturalSpawner.m_47038_(NaturalSpawner.java:176) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,xf:fml:forge:forge_method_redirector,re:classloading,xf:fml:forge:forge_method_redirector,pl:mixin:A}
+	at net.minecraft.world.level.NaturalSpawner.m_47045_(NaturalSpawner.java:118) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,xf:fml:forge:forge_method_redirector,re:classloading,xf:fml:forge:forge_method_redirector,pl:mixin:A}
+	at net.minecraft.world.level.NaturalSpawner.m_47029_(NaturalSpawner.java:108) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,xf:fml:forge:forge_method_redirector,re:classloading,xf:fml:forge:forge_method_redirector,pl:mixin:A}
+	at net.minecraft.server.level.ServerChunkCache.m_8490_(ServerChunkCache.java:358) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache.m_201698_(ServerChunkCache.java:312) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.m_8793_(ServerLevel.java:305) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:citadel.mixins.json:ServerLevelMixin,pl:mixin:A}
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Konnorcito'/244, l='ServerLevel[world]', x=9.50, y=71.00, z=-7.50]]
+	Chunk stats: 2401
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,65,0), Section: (at 0,1,0 in 0,4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 7120 game time, 7120 day time
+	Level name: world
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Level weather: Rain time: 145991 (now: false), thunder time: 163892 (now: false)
+	Known server brands: forge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.m_5703_(MinecraftServer.java:893) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.dedicated.DedicatedServer.m_5703_(DedicatedServer.java:283) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:814) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:661) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23157!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1021-azure
+	Java Version: 17.0.14, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 3922108016 bytes (3740 MiB) / 5276434432 bytes (5032 MiB) up to 15032385536 bytes (14336 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7995.02
+	Virtual memory used (MB): 7955.90
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx14G
+	Server Running: true
+	Player Count: 1 / 20; [ServerPlayer['Konnorcito'/244, l='ServerLevel[world]', x=9.50, y=71.00, z=-7.50]]
+	Data Packs: vanilla, mod:treasures_of_the_dead, mod:geckolib, mod:playeranimator (incompatible), mod:born_in_chaos_v1, mod:gnumus, mod:caelus (incompatible), mod:incendium, mod:ribbits (incompatible), mod:curios (incompatible), mod:illagerwarship, mod:dungeons_and_combat, mod:citadel (incompatible), mod:alexsmobs (incompatible), mod:travelersbackpack, mod:legendary_monsters, mod:artifacts, mod:irons_spellbooks, mod:yungsapi, mod:legendarycreatures, mod:mixinextras (incompatible), mod:architectury (incompatible), mod:skyarena, mod:cloth_config (incompatible), mod:simplyswords (incompatible), mod:bettercombat (incompatible), mod:combatroll (incompatible), mod:forge, mod:t_and_t (incompatible), mod:expandability (incompatible), mod:cristellib (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		treasures_of_the_dead-0.2.5a-1.20.1.jar           |Treasures of the dead         |treasures_of_the_dead         |0.2.5a-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.7.1.jar                   |GeckoLib 4                    |geckolib                      |4.7.1               |DONE      |Manifest: NOSIGNATURE
+		player-animation-lib-forge-1.0.2-rc1+1.20.jar     |Player Animator               |playeranimator                |1.0.2-rc1+1.20      |DONE      |Manifest: NOSIGNATURE
+		born_in_chaos_[Forge]1.20.1_1.6.3.jar             |Born in Chaos                 |born_in_chaos_v1              |1.6.3               |DONE      |Manifest: NOSIGNATURE
+		gnumus_settlement_[Forge]1.20.1_v1.0.jar          |Gnumus Settlement             |gnumus                        |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		caelus-forge-3.2.0+1.20.1.jar                     |Caelus API                    |caelus                        |3.2.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		Incendium_1.20.x_v5.3.5.jar                       |Incendium                     |incendium                     |5.3.5               |DONE      |Manifest: NOSIGNATURE
+		Ribbits-1.20.1-Forge-3.0.4.jar                    |Ribbits                       |ribbits                       |1.20.1-Forge-3.0.4  |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.12.1+1.20.1.jar                    |Curios API                    |curios                        |5.12.1+1.20.1       |DONE      |Manifest: NOSIGNATURE
+		illagerwarship-1.0.0 forge 1.20.1.jar             |Illager-Warship               |illagerwarship                |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		dungeons_and_combat-1.1.1-forge-1.20.1.jar        |dungeons and combat           |dungeons_and_combat           |1.1.1               |DONE      |Manifest: NOSIGNATURE
+		citadel-2.6.1-1.20.1.jar                          |Citadel                       |citadel                       |2.6.1               |DONE      |Manifest: NOSIGNATURE
+		alexsmobs-1.22.9.jar                              |Alex's Mobs                   |alexsmobs                     |1.22.9              |DONE      |Manifest: NOSIGNATURE
+		travelersbackpack-forge-1.20.1-9.1.33.jar         |Traveler's Backpack           |travelersbackpack             |9.1.33              |DONE      |Manifest: NOSIGNATURE
+		legendarymonsters-1.8.1 MC 1.20.1.jar             |LegendaryMonsters             |legendary_monsters            |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		artifacts-forge-9.5.13.jar                        |Artifacts                     |artifacts                     |9.5.13              |DONE      |Manifest: NOSIGNATURE
+		irons_spellbooks-1.20.1-3.4.0.7.jar               |Iron's Spells 'n Spellbooks   |irons_spellbooks              |1.20.1-3.4.0.7      |DONE      |Manifest: NOSIGNATURE
+		YungsApi-1.20-Forge-4.0.6.jar                     |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |DONE      |Manifest: NOSIGNATURE
+		legendarycreatures-1.20.1-1.0.15 (1).jar          |Legendary Creatures           |legendarycreatures            |1.20.1-1.0.15       |DONE      |Manifest: NOSIGNATURE
+		mixinextras-forge-0.3.5.jar                       |MixinExtras                   |mixinextras                   |0.3.5               |DONE      |Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		skyarena-1.2.3.jar                                |Sky Arena                     |skyarena                      |1.2.3               |DONE      |Manifest: NOSIGNATURE
+		cloth-config-11.1.136-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.136            |DONE      |Manifest: NOSIGNATURE
+		simplyswords-forge-1.56.0-1.20.1.jar              |Simply Swords                 |simplyswords                  |1.56.0-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		bettercombat-forge-1.8.6+1.20.1.jar               |Better Combat                 |bettercombat                  |1.8.6+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		combatroll-forge-1.3.3+1.20.1.jar                 |Combat Roll                   |combatroll                    |1.3.3+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.3.7-universal.jar                 |Forge                         |forge                         |47.3.7              |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		Towns-and-Towers-1.12-Fabric+Forge.jar            |Towns and Towers              |t_and_t                       |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+		expandability-forge-9.0.4.jar                     |ExpandAbility                 |expandability                 |9.0.4               |DONE      |Manifest: NOSIGNATURE
+		cristellib-1.1.6-forge.jar                        |Cristel Lib                   |cristellib                    |1.1.6               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: ab914ce2-588a-45e2-b189-cc1c099a5d88
+	FML: 47.3
+	Forge: net.minecraftforge:47.3.7
